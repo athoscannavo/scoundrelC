@@ -1,0 +1,29 @@
+SCOUNDREL - JOGO DE CARTAS (RPG SOLO)
+
+OBJETIVO DO JOGO
+
+Scoundrel é um jogo de cartas de estratégia e sobrevivência para um jogador. O objetivo principal é explorar a masmorra e resolver todas as 52 cartas do baralho sem permitir que os pontos de vida cheguem a zero. O jogador inicia a partida com 20 pontos de vida, que também representam o limite máximo de saúde durante todo o jogo.
+
+COMPOSIÇÃO DO BARALHO
+
+O baralho é formado por 52 cartas divididas em três categorias, nas quais as figuras assumem valores numéricos crescentes: Valete (J) vale 11, Dama (Q) vale 12, Rei (K) vale 13 e Ás (A) vale 14.
+
+As cartas dos naipes de Paus e Espadas, do 2 ao Ás, representam os monstros, totalizando 26 cartas que causam dano equivalente ao seu valor. As cartas do naipe de Ouros, do 2 ao Ás, representam as armas, totalizando 13 cartas usadas para reduzir o dano recebido nos combates. Já as cartas do naipe de Copas, do 2 ao Ás, representam as poções de cura, totalizando 13 cartas que restauram pontos de vida.
+
+REGRAS DO JOGO
+
+Ao enfrentar um monstro de mãos vazias, o jogador perde pontos de vida iguais ao valor total da carta do monstro. Caso possua uma arma equipada e opte por utilizá-la, o dano sofrido passa a ser a diferença entre a força do monstro e o poder da arma, nunca sendo inferior a zero.
+
+Equipar uma nova arma substitui automaticamente a arma anterior. Além disso, as armas possuem uma regra de desgaste: após derrotar um monstro com uma arma, ela só poderá ser utilizada novamente contra monstros que tenham valor estritamente menor que o do último monstro derrotado por ela. Caso apareça um monstro de valor igual ou superior, o jogador será obrigado a lutar desarmado ou equipar uma nova arma.
+
+As poções recuperam pontos de vida de acordo com o seu valor, respeitando o teto máximo de 20 pontos. Entretanto, apenas uma poção surte efeito por turno. Se o jogador escolher outras poções no mesmo turno, elas serão descartadas sem restaurar vida.
+
+Antes de enfrentar qualquer carta de uma sala completa com quatro cartas, o jogador tem o direito de fugir da sala pressionando a tecla f. Ao fugir, todas as quatro cartas da sala são enviadas para o fundo do baralho da masmorra. Por regra, não é permitido fugir de duas salas consecutivas.
+
+FUNCIONAMENTO E PONTUAÇÃO
+
+Ao executar o programa, é exibido um menu principal com opções para iniciar uma nova partida, consultar as instruções ou sair do jogo. Durante a partida, o sistema apresenta o estado atual do jogador e uma sala contendo quatro cartas numeradas de 1 a 4.
+
+A cada turno, o jogador deve escolher e resolver três das quatro cartas disponíveis digitando o número correspondente no teclado, podendo também abandonar a partida a qualquer momento digitando a letra x. A quarta carta não escolhida permanece na mesa e se junta a três novas cartas retiradas do topo da masmorra para formar a sala do turno seguinte.
+
+A partida termina em vitória quando todas as cartas da masmorra e da sala são resolvidas com o jogador mantendo sua vida acima de zero. Nesse caso, a pontuação final corresponde à vida restante, acrescida do valor da última carta como bônus caso o jogador termine com 20 pontos de vida e a última carta jogada tenha sido uma poção. A derrota ocorre quando a vida chega a zero ou menos, resultando em uma pontuação final negativa calculada pela vida atual subtraída da soma dos valores de todos os monstros que restaram na masmorra e na sala.

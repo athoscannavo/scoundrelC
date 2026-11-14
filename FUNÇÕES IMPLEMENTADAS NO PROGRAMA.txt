@@ -1,0 +1,82 @@
+FUNÇÕES IMPLEMENTADAS NO PROGRAMA
+
+O programa foi estruturado em onze funções, sendo a função principal main e dez funções auxiliares com responsabilidades específicas, garantindo a organização e a legibilidade do código-fonte.
+
+MAIN
+
+É o ponto de entrada e o controlador geral do programa. Inicializa a semente de geração de números aleatórios com base no relógio do sistema, exibe as instruções iniciais e mantém o laço do menu principal, direcionando o usuário para iniciar uma nova partida, consultar novamente as regras ou encerrar a execução do jogo.
+
+EXIBIR_INSTRUCOES
+
+Apresenta na tela as informações introdutórias do Scoundrel, detalhando o objetivo da partida, os valores e efeitos de cada naipe de carta e as regras básicas de combate, uso de poções e fuga de salas.
+
+OBTER_NOME_NAIPE
+
+Recebe o código numérico correspondente ao naipe de uma carta e retorna o texto descritivo desse naipe acompanhado de sua categoria no jogo, como Paus (Monstro), Espadas (Monstro), Copas (Poção) ou Ouros (Arma).
+
+IMPRIMIR_CARTA
+
+Formata e exibe uma carta individual na tela, convertendo os valores numéricos de 11 a 14 nas letras correspondentes às figuras do baralho (Valete J, Dama Q, Rei K e Ás A) e combinando o valor com o nome do respectivo naipe.
+
+LER_OPCAO_TECLADO
+
+Exibe uma mensagem solicitando uma ação ao jogador, realiza a leitura segura da entrada pelo teclado, descarta eventuais caracteres excedentes no buffer de entrada para evitar leituras indesejadas nas etapas seguintes e retorna o primeiro caractere digitado convertido para letra minúscula.
+
+CRIAR_BARALHO
+
+Preenche o vetor dinâmico da masmorra com as 52 cartas do jogo, gerando 26 cartas de monstros (Paus e Espadas de 2 a 14), 13 cartas de poções (Copas de 2 a 14) e 13 cartas de armas (Ouros de 2 a 14), retornando ao final a quantidade total de cartas criadas.
+
+EMBARALHAR_BARALHO
+
+Reorganiza aleatoriamente a ordem das cartas armazenadas no vetor da masmorra antes do início da partida, garantindo que a sequência de desafios seja diferente a cada novo jogo.
+
+EXIBIR_ESTADO_E_SALA
+
+Mostra o painel de situação atual do jogador, incluindo pontos de vida, poder da arma equipada, limite máximo de força de monstro que a arma pode enfrentar, quantidade de cartas restantes na masmorra, total de cartas descartadas e as quatro posições da sala atual.
+
+ENFRENTAR_MONSTRO
+
+Gerencia a lógica de combate quando o jogador escolhe uma carta de monstro. Verifica se a arma equipada pode ser utilizada de acordo com a regra de desgaste, permite que o jogador escolha entre lutar desarmado ou usar a arma quando disponível, aplica o dano correspondente à vida do jogador e atualiza o registro do último monstro derrotado.
+
+CALCULAR_PONTUACAO_DERROTA
+
+Calcula a pontuação final quando a vida do jogador chega a zero ou menos, somando os valores de todos os monstros que ainda restaram na masmorra e nos espaços ocupados da sala e subtraindo esse total da vida atual do jogador.
+
+JOGAR_PARTIDA
+
+Controla todo o fluxo de uma partida. Realiza a alocação dinâmica de memória para os vetores da masmorra, da sala e do controle de espaços ocupados, inicializa os atributos do jogador, distribui as cartas a cada turno, processa as ações de escolher cartas ou fugir da sala, verifica as condições de vitória ou derrota e libera a memória alocada antes de retornar ao menu principal.
+
+
+
+
+
+==================================================================
+
+
+
+
+
+
+BIBLIOTECAS UTILIZADAS NO PROJETO
+
+Para fazer o jogo funcionar, foram usadas cinco bibliotecas básicas da linguagem C, cada uma servindo para tarefas simples e diretas dentro do programa.
+
+STDIO.H
+
+Foi usada para toda a comunicação com o jogador. Com ela, o programa exibe os menus, as instruções e as cartas na tela usando printf, além de ler o que o jogador digita no teclado com fgets e limpar letras sobrando com getchar.
+
+STDLIB.H
+
+Foi usada para duas tarefas principais: separar e depois liberar o espaço na memória para guardar as cartas do baralho e da sala (usando malloc e free), e fazer o sorteio para embaralhar as cartas antes de a partida começar (usando rand e srand).
+
+STRING.H
+
+Foi usada para ajudar a conferir se o jogador apertou a tecla Enter na hora de digitar (com strchr) e também na opção de pular uma sala, usando memmove e memcpy para devolver as quatro cartas ao fundo do baralho de forma prática.
+
+CTYPE.H
+
+Foi usada de maneira bem simples apenas com a função tolower. Ela serve para transformar qualquer letra maiúscula digitada pelo jogador em minúscula, fazendo com que comandos como F ou X funcionem normalmente.
+
+TIME.H
+
+Foi usada apenas uma vez no início do programa, com a função time, para pegar a hora atual do computador e garantir que o embaralhamento das cartas seja diferente cada vez que o jogo for aberto.
